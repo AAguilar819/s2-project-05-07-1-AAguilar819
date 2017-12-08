@@ -14,10 +14,11 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>CGIP Registration Form</title>
-  <link href="cg_base.css" rel="stylesheet" />
-  <link href="cg_styles.css" rel="stylesheet" />
-  <script type="cg_scripts/javascript">
-
+  <link href="cg_base.css" rel="stylesheet">
+  <link href="cg_styles.css" rel="stylesheet">
+  <link rel="stylesheet" href="cg_forms.css">
+  <link rel="stylesheet" href="cg_validate.css">
+  <script type="text/javascript" src="cg_script">
   </script>
 </head>
 
@@ -48,12 +49,15 @@
     </ul>
   </nav>
   <section>
+    <!-- Start Work -->
     <h1>Conference Registration Form</h1>
     <p>Required Item (*)</p>
+    <!-- Start Form -->
     <form action="http://www.example.com/cg/register" method="post">
       <fieldset>
         <label for="title">Title</label>
         <input type="text" name="title" id="titleBox" list="titleList">
+        <!-- Start Datalist -->
         <datalist id="titleList">
           <option value="Mr."></option>
           <option value="Mrs."></option>
@@ -63,12 +67,13 @@
           <option value="Assist. Prof."></option>
           <option value="Assoc Prof."></option>
         </datalist>
+        <!-- End Datalist -->
         <label for="firstName">First Name*</label>
         <input type="text" name="firstName" id="fnBox" required>
         <label for="lastName">Last Name*</label>
         <input type="text" name="lastName" id="lnBox" required>
         <label for="address">Address*</label>
-        <input type="text" name="address" id="addBox" required>
+        <textarea name="addBox" id="addBox" rows="8" cols="80" required></textarea>
         <label for="group">Company or University</label>
         <input type="text" name="group" id="groupBox">
         <label for="email">Email*</label>
@@ -78,11 +83,19 @@
         <label for="acgipID">ACGIP Membership Number</label>
         <input type="text" name="acgipID" id="idBox" placeholder="acgip-nnnnnn" pattern="^acgip\-\d{6}$">
         <label for="regList">Registration Category</label>
-        <select class="" id="regList">
-          <option value=""></option>
+        <!-- Start Selection -->
+        <select id="regList">
+          <option value="member">ACGIP Member ($695)</option>
+          <option value="nonmember">Non-Member ($795)</option>
+          <option value="student">Student ($310)</option>
+          <option value="poster">Poter ($95)</option>
+          <option value="guest">Guest ($35)</option>
         </select>
+        <!-- End Selection -->
       </fieldset>
+      <p><input type="submit" value="Continue"></p>
     </form>
+    <!-- End Form + Work -->
   </section>
 
   <aside>
